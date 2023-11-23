@@ -69,8 +69,8 @@ export default function Home() {
           name="description"
           content="EffiBot is a general purpose, programmable & extensible AI being developed by Krishna, using state of the art machine learning models and APIs."
         />
-        <link rel="icon" href="/Effbot_icon.png" type="image/png" />
-        <meta property="og:image" content="/Effbot_meta.png" />
+        <link rel="icon" href="/effbot_icon.png" type="image/png" />
+        <meta property="og:image" content="/effbot_meta.png" />
       </Head>
 
       <Layout>

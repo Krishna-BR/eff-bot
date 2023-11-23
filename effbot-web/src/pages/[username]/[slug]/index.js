@@ -71,8 +71,8 @@ export default function SkillPage({ skill }) {
       <Head>
         <title>{`${skill.title} - Effbot`}</title>
         <meta name="description" content={skill.description} />
-        <link rel="icon" href="/Effbot_icon.png" type="image/png" />
-        <meta property="og:image" content="/Effbot_meta.png" />
+        <link rel="icon" href="/effbot_icon.png" type="image/png" />
+        <meta property="og:image" content="/effbot_meta.png" />
       </Head>
       <Layout>
         <Navbar />

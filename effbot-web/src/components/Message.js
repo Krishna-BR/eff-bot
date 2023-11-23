@@ -36,7 +36,7 @@ const Message = ({ role, content }) => {
           role === "user"
             ? "/profile.PNG"
             : role === "assistant"
-            ? "/effbot.PNG"
+            ? "/Effbot.PNG"
             : "/Krishna_avatar.jpeg"
         }
         height={40}

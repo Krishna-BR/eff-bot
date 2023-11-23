@@ -3,9 +3,7 @@
 [![](https://i.imgur.com/1sPbh8y.png)](https://jobot.dev)
 
 This repository contains the source code for [Jobot](https://jobot.dev), a general purpose, programmable & extensible AI being developed by [Jovian](https://jovian.com), using state of the art machine learning models and APIs. Follow the development of Jobot here: https://howtobuildanai.com
-NEXT_PUBLIC_SUPABASE_URL=https://gjqzhulzaipvpxkriott.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdqcXpodWx6YWlwdnB4a3Jpb3R0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA2NzgxMTksImV4cCI6MjAxNjI1NDExOX0.0gkPEuTE2unQGYDAqpvcAnno2g3KsOxlI8VPwO-IDgw
-OPENAI_API_KEY=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
+
 ## Abilities
 
 Jobot has (or will soon have) the following abilities:

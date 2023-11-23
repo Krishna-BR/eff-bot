@@ -23,7 +23,7 @@ export default function Login() {
   return (
     <>
       <Head>
-        <title>Jobot - Your friendly neighborhood AI</title>
+        <title>Effbot - Your friendly neighborhood AI</title>
       </Head>
       <Toaster />
       <div className="flex flex-col h-screen">

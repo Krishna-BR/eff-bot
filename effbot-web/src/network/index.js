@@ -2,7 +2,7 @@ import { toast } from "react-hot-toast";
 import { createClient } from "@supabase/supabase-js";
 
 export const TEMPLATES_BASE_URL =
-  "https://raw.githubusercontent.com/JovianHQ/jobot/main/templates";
+  "https://raw.githubusercontent.com/KrishnaHQ/Effbot/main/templates";
 
 export async function getTemplates() {
   const res = await fetch(

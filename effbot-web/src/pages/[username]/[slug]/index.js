@@ -1,19 +1,24 @@
 import Head from "next/head";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/Navbar";
 import useOpenAIMessages from "@/utils/openai";
-import MessageInput from "@/components/MessageInput";
 import MessageHistory from "@/components/MessageHistory";
-import Skills from "@/components/Skills";
+import MessageInput from "@/components/MessageInput";
+import SkillForm from "@/components/SkillForm";
+import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import Layout from "@/components/Layout";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/router";
 
-export default function Home() {
+export default function SkillPage({ skill }) {
   const { history, sending, sendMessages } = useOpenAIMessages();
   const supabase = useSupabaseClient();
   const user = useUser();
   const router = useRouter();
+
+  if (!skill) {
+    return null;
+  }
 
   async function handleSend(newMessages) {
     const finalHistory = await sendMessages(newMessages);
@@ -64,43 +69,49 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>EffiBot - The AI That Does Everything</title>
-        <meta
-          name="description"
-          content="EffiBot is a general purpose, programmable & extensible AI being developed by Krishna, using state of the art machine learning models and APIs."
-        />
-        <link rel="icon" href="/jobot_icon.png" type="image/png" />
-        <meta property="og:image" content="/jobot_meta.png" />
+        <title>{`${skill.title} - Effbot`}</title>
+        <meta name="description" content={skill.description} />
+        <link rel="icon" href="/Effbot_icon.png" type="image/png" />
+        <meta property="og:image" content="/Effbot_meta.png" />
       </Head>
-
       <Layout>
         <Navbar />
 
-        {history.length <= 1 && (
-          <div className="flex-1 overflow-y-auto">
-            <div className="mx-auto max-w-4xl overflow-y-auto w-full">
-              <h1 className="mx-auto mt-4 my-6 w-full max-w-4xl text-3xl  md:text-4xl font-medium text-center">
-                EffiBot - The AI That Does Everything
-              </h1>
-            </div>
-
-            <MessageInput
-              sending={sending}
-              sendMessages={handleSend}
-              placeholder="Ask me anything.."
-            />
-
-            <Skills />
-          </div>
+        {history.length === 1 && (
+          <SkillForm skill={skill} sendMessages={handleSend} />
         )}
 
         {history.length > 1 && (
           <>
             <MessageHistory history={history} />
-            <MessageInput sendMessages={handleSend} sending={sending} />
+            <MessageInput sending={sending} sendMessages={handleSend} />
           </>
         )}
       </Layout>
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  const supabase = createServerSupabaseClient(context);
+  const slug = context.params.slug;
+  const username = context.params.username;
+
+  const { data: skills, error } = await supabase
+    .from("skills")
+    .select("*,profiles(username, first_name, last_name)")
+    .eq("slug", slug)
+    .eq("profiles.username", username)
+    .limit(1);
+
+  if (error || !skills || skills.length === 0) {
+    console.error("Failed to fetch skill for slug: " + slug, error);
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { skill: skills[0] },
+  };
 }

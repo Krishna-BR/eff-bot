@@ -1,12 +1,12 @@
-# Jobot - The AI That Does Everything\*
+# Efficiency Bot - The AI That Does Everything\*
 
-[![](https://i.imgur.com/1sPbh8y.png)](https://jobot.dev)
+[![](https://i.imgur.com/1sPbh8y.png)]
 
-This repository contains the source code for [Jobot](https://jobot.dev), a general purpose, programmable & extensible AI being developed by [Jovian](https://jovian.com), using state of the art machine learning models and APIs. Follow the development of Jobot here: https://howtobuildanai.com
+This repository contains the source code for Effbot, a general purpose, programmable & extensible AI being developed by Krishna, using state of the art machine learning models and APIs. 
 
 ## Abilities
 
-Jobot has (or will soon have) the following abilities:
+Effbot has (or will soon have) the following abilities:
 
 - ✅ Intelligence (powered by GPT-3.5/4)
 - ✅ Skills (preconfigured prompts)
@@ -18,11 +18,11 @@ Jobot has (or will soon have) the following abilities:
 - ⬜️ Creativitiy (powered by DALL-E 2)
 - ⬜️ Vision (powered by GPT-4)
 
-Users will also be able to create and publish their own skills ([see examples](https://jovian.com/jobot)) for various use cases.
+Users will also be able to create and publish their own skills for various use cases.
 
 ## Interfaces
 
-Jobot is (or will be) accessible to users in the following ways:
+Effbot is (or will be) accessible to users in the following ways:
 
 - ✅ Web Application
 - ✅ REST API
@@ -34,11 +34,11 @@ Jobot is (or will be) accessible to users in the following ways:
 - ⬜️ Voice Assistant
 - ⬜️ and much more...
 
-Developers will also be able to build their own applications using Jobot's REST API. Starter templates will be provided for building various types of applications using Jobot.
+Developers will also be able to build their own applications using Effbot's REST API. Starter templates will be provided for building various types of applications using Effbot.
 
 ## Tech Stack
 
-Jobot uses the following technology stack:
+Effbot uses the following technology stack:
 
 - [OpenAI APIs](https://platform.openai.com/docs/api-reference)
 - [React](https://react.dev/)
@@ -50,25 +50,16 @@ Jobot uses the following technology stack:
 
 This is not an exhaustive list, please check the source code for a full list of dependencies.
 
-## Contributing
-
-Jobot is completely open-source and we welcome all forms of contributions from the community. Here's how you can contribute to Jobot:
-
-- Report bugs & suggest features by [creating an issue](https://github.com/JovianHQ/jobot/issues)
-- Fix bugs & add features by [opening a pull request](https://github.com/JovianHQ/jobot/pulls)
-- To show your love for the project, [star this repository](https://github.com/JovianHQ/jobot)
-- Ask a question or provide suggestions by [starting a discussion](https://jovian.com/learn/how-to-build-an-ai/discussions)
-- Blog or tweet about the project to help spread the word
 
 ## API Access
 
-Aside from the [web app](https://jobot.jovian.com), you can access Jobot via the following API endpoints to build your own AI-powered applications:
+Aside from the [web app], you can access Effbot via the following API endpoints to build your own AI-powered applications:
 
 ### Send OTP to Email
 
 Use this endpoint generate a per-user API key. It sends an OTP to a user's email for generating an API key.
 
-**API endpoint**: https://jobot.jovian.com/api/auth/send-otp
+**API endpoint**: /api/auth/send-otp
 
 **Method**: POST
 
@@ -92,7 +83,7 @@ Use this endpoint generate a per-user API key. It sends an OTP to a user's email
 
 Use this endpoint to verify the OTP entered by the user and generate an API key that you can use for future requests.
 
-**API endpoint**: https://jobot.jovian.com/api/auth/verify-otp
+**API endpoint**: /api/auth/verify-otp
 
 **Method**: POST
 
@@ -121,12 +112,12 @@ Use the `key` in the `Authorization` header for endpoints requiring user authent
 
 ### Chat Completions
 
-Use this to send messages to the ChatGPT API and get back a response. Include an authorization header with a valid Jobot API key. It's identical to [OpenAI's chat completions API](https://platform.openai.com/docs/api-reference/chat/create).
+Use this to send messages to the ChatGPT API and get back a response. Include an authorization header with a valid Effbot API key. It's identical to [OpenAI's chat completions API](https://platform.openai.com/docs/api-reference/chat/create).
 
 **Request:**
 
 ```
-POST https://jobot.jovian.com/api/chat
+POST /api/chat
 Content-Type: application/json
 Authorization: Bearer API_KEY
 
@@ -175,7 +166,7 @@ This endpoint gets all the conversations for a particular user using their API k
 
 **Method:** GET
 
-**ENDPOINT**: https://jobot.jovian.com/api/conversations
+**ENDPOINT**: /api/conversations
 
 **Headers**: `"Authorization" : "Bearer USER_API_KEY"`
 
@@ -215,7 +206,7 @@ This endpoint gets all the conversations for a particular user using their API k
 
 This endpoint creates a new conversation for a particular user. The request body contains an array of messages and a title.
 
-**Endpoint**: https://jobot.jovian.com/api/conversations
+**Endpoint**: /api/conversations
 
 **Method**: POST
 
@@ -231,7 +222,7 @@ This endpoint creates a new conversation for a particular user. The request body
   "messages": [
     {
       "role": "system",
-      "content": "You are Jobot, a helpful assistant developed by Jovian"
+      "content": "You are Effbot, a helpful assistant developed by Krishna"
     },
     {
       "role": "user",
@@ -256,7 +247,7 @@ This endpoint creates a new conversation for a particular user. The request body
         "id": "c0318588-0e60-45c8-9996-acfdbf359dc1",
         "created_at": "2023-05-03T11:07:04.519493+00:00",
         "role": "system",
-        "content": "You are Jobot, a helpful and verstaile AI created by Jovian using state-of the art ML models and APIs."
+        "content": "You are Effbot, a helpful and verstaile AI created by Krishna using state-of the art ML models and APIs."
       },
       {
         "id": "ab33a56c-4672-46ae-85cf-c22bc337a26f",
@@ -277,7 +268,7 @@ This endpoint creates a new conversation for a particular user. The request body
 
 ### Retrieve Conversation Messages
 
-**Endpoint:** https://jobot.jovian.com/api/conversations/:conversation
+**Endpoint:** /api/conversations/:conversation
 
 **Method**: GET
 
@@ -299,7 +290,7 @@ This endpoint creates a new conversation for a particular user. The request body
         "id": "c0318588-0e60-45c8-9996-acfdbf359dc1",
         "created_at": "2023-05-03T11:07:04.519493+00:00",
         "role": "system",
-        "content": "You are Jobot, a helpful and verstaile AI created by Jovian using state-of the art ML models and APIs."
+        "content": "You are Effbot, a helpful and verstaile AI created by Krishna using state-of the art ML models and APIs."
       },
       {
         "id": "ab33a56c-4672-46ae-85cf-c22bc337a26f",
@@ -322,7 +313,7 @@ This endpoint creates a new conversation for a particular user. The request body
 
 Use this to add new messages to an existing conversation.
 
-**Endpoint:** https://jobot.jovian.com/api/conversations/:conversation
+**Endpoint:** /api/conversations/:conversation
 
 **Method**: GET
 
@@ -362,7 +353,7 @@ Content-Type: application/json
         "id": "c0318588-0e60-45c8-9996-acfdbf359dc1",
         "created_at": "2023-05-03T11:07:04.519493+00:00",
         "role": "system",
-        "content": "You are Jobot, a helpful and verstaile AI created by Jovian using state-of the art ML models and APIs."
+        "content": "You are Effbot, a helpful and verstaile AI created by Krishna using state-of the art ML models and APIs."
       },
       {
         "id": "ab33a56c-4672-46ae-85cf-c22bc337a26f",
@@ -383,24 +374,24 @@ Content-Type: application/json
 
 ### Retrieve Skills
 
-`GET https://jobot.jovian.com/api/skills` (unauthenticated): Provides a list of all available skills as JSON
+`GET /api/skills` (unauthenticated): Provides a list of all available skills as JSON
 
 ### Retrieve a User's Skills
 
-`GET https://jobot.jovian.com/api/:username/skills` (uauthneticated): Provides a list of skills provided by a user as JSON
+`GET /api/:username/skills` (uauthneticated): Provides a list of skills provided by a user as JSON
 
 ### Retrieve a Single Skill
 
-`GET https://jobot.jovian.com/api/:username/:skill` (authenticated): Use it to get the details for
+`GET /api/:username/:skill` (authenticated): Use it to get the details for
 a specific skill
 
 ### Start Conversation for a Skill
 
 Use it to send input data and messages to a specific skill
 
-`POST https://jobot.jovian.com/api/:username/:skill` (authenticated)
+`POST /api/:username/:skill` (authenticated)
 
-**Authentication Headers**: Create an API key at [https://jobot.jovian.com/account](https://jobot.jovian.com/account) and include it as an `"Authorization"` header with value `"Bearer API_KEY"`
+**Authentication Headers**: Create an API key at [/account] and include it as an `"Authorization"` header with value `"Bearer API_KEY"`
 
 **Request Body**: (similar to [OpenAI chat completions](https://platform.openai.com/docs/api-reference/chat/create) but can include an `inputData` key for initial inputs that are used to create system and user prompt)
 
@@ -440,7 +431,7 @@ Use it to send input data and messages to a specific skill
     {
       "message": {
         "role": "assistant",
-        "content": "I am Jobot, an AI assistant created by Jovian. My purpose is to help users test their understanding of a topic by asking them multiple choice questions."
+        "content": "I am Effbot, an AI assistant created by Krishna. My purpose is to help users test their understanding of a topic by asking them multiple choice questions."
       },
       "finish_reason": "stop",
       "index": 0
@@ -449,19 +440,19 @@ Use it to send input data and messages to a specific skill
 }
 ```
 
-Apart from the web app, you can interact with Jobot via a REST API. The following endpoints are supported:
+Apart from the web app, you can interact with Effbot via a REST API. The following endpoints are supported:
 
 ## Deployment
 
-Follow these steps to deploy your own copy of Jobot the Vercel:
+Follow these steps to deploy your own copy of Effbot the Vercel:
 
-1. Fork [this repostory](https://github.com/jovianhq/jobot) to get your own copy of the source code
+1. Fork [this repostory] to get your own copy of the source code
 
 2. Sign up on https://platform.openai.com and generate an [Open API Key](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key)
 
 3. Sign up on [Supabase](https://supabase.com) and set up a new project
 
-   - Change [Signup & Login Email Templates](https://jovian.com/learn/how-to-build-an-ai) for your project to the following:
+   - Change [Signup & Login Email Templates](https://Krishna.com/learn/how-to-build-an-ai) for your project to the following:
 
    Confirm Signup:
 
@@ -522,9 +513,9 @@ Alternatively, you can create each table manually yourself
 | user_prompt   | No description                            | character varying        | varchar     |
 | inputs        | No description                            | jsonb                    | jsonb       |
 
-4. Sign up on [Vercel](https://vercel.com) and deploy Jobot's NextJS application
+4. Sign up on [Vercel](https://vercel.com) and deploy Effbot's NextJS application
 
-   - Follow [these instructions](https://vercel.com/docs/concepts/deployments/git#deploying-a-git-repository) and select `jobot-web` as the root directory
+   - Follow [these instructions](https://vercel.com/docs/concepts/deployments/git#deploying-a-git-repository) and select `effbot-web` as the root directory
 
    - Make sure to set the following environment variables:
 
@@ -532,11 +523,11 @@ Alternatively, you can create each table manually yourself
      - `NEXT_PUBLIC_SUPABASE_ANON_KEY` - Your [Supabase Anon API key](https://app.supabase.com/project/rbvvbmvfzbgqpqghtvgg/settings/api?)
      - `OPENAI_API_KEY` - Your OpenAI API key
 
-5. (Optional) [Connect a custom domain](https://vercel.com/docs/concepts/projects/domains/add-a-domain) (e.g. https://jobot.dev ) to your Vercel project.
+5. (Optional) [Connect a custom domain](https://vercel.com/docs/concepts/projects/domains/add-a-domain) (e.g. https://Effbot.dev ) to your Vercel project.
 
 ## Development
 
-After you've deployed your own copy of Jobot, follow these additional steps to develop Jobot:
+After you've deployed your own copy of Effbot, follow these additional steps to develop Effbot:
 
 1. Clone your repository to your computer or open it online [using GitHub Codespaces](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository)
 
@@ -545,14 +536,14 @@ After you've deployed your own copy of Jobot, follow these additional steps to d
 2. Open the repository on VS Code, launch the terminal, and run these commands:
 
    ```
-   cd jobot-web     # enter NextJS project
+   cd effbot-web     # enter NextJS project
    npm install      # install dependencies
    npm run dev      # run development server
    ```
 
    You should now be able to open up the application in a new browser tab and interact with it.
 
-3. Create a file `.env.local` inside the `jobot-web` folder and add proper values for the following enviroment variables:
+3. Create a file `.env.local` inside the `effbot-web` folder and add proper values for the following enviroment variables:
 
    ```
    NEXT_PUBLIC_SUPABASE_URL=xxx
@@ -566,10 +557,7 @@ After you've deployed your own copy of Jobot, follow these additional steps to d
 
 6. If you've set up a Vercel project, any changes made to the `main` branch of your repository will get pushed automatically
 
-**NOTE**: If you'd like to contribute your changes back to the original repository https://github.com/jovianhq/jobot, please [create a pull request from your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork). We welcome community contributions to Jobot!
-
-Check out our course for a deatailed walkthrough of the codebase: https://howotobuildanai.com
 
 ## Disclaimer
 
-\* Jobot can't do "everything" just yet, but it soon will. 😉
+\* Effbot can't do "everything" just yet, but it soon will. 😉

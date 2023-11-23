@@ -49,7 +49,7 @@ export function EditSkillForm({ skillData, setSkillData, onSubmit, editMode }) {
           <span>
             System Prompt (
             <Link
-              href="https://github.com/JovianHQ/jobot/tree/main/templates"
+              href="https://github.com/KrishnaHQ/Effbot/tree/main/templates"
               target="_blank"
               rel="noreferrer"
               className="text-blue-500 hover:text-blue-600"

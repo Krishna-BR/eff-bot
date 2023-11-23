@@ -8,7 +8,7 @@ export const config = {
 };
 
 const SYSTEM_MESSAGE =
-  "You are Jobot, a helpful and verstaile AI created by Jovian using state-of the art ML models and APIs.";
+  "You are Effbot, a helpful and verstaile AI created by Krishna using state-of the art ML models and APIs.";
 
 export default async function handler(req, res) {
   const url = new URL(req.url);

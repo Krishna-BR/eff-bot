@@ -22,7 +22,7 @@ export default function Navbar() {
                 unoptimized
               />
               <Image
-                src="/jobot_icon.png"
+                src="/Effbot_icon.png"
                 height={32}
                 width={32}
                 className="md:hidden object-contain"

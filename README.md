@@ -1,6 +1,6 @@
 # Efficiency Bot - The AI That Does Everything\*
 
-[![](https://i.imgur.com/1sPbh8y.png)]
+![](effbot-web/public/effbot_mindmap.png)
 
 This repository contains the source code for Effbot, a general purpose, programmable & extensible AI being developed by Krishna, using state of the art machine learning models and APIs. 
 

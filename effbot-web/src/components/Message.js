@@ -1,32 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
-// import light build
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-// import only whatever languages you are using. Thaw will dramatically reduce the build size of the page
-import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
-import python from "react-syntax-highlighter/dist/cjs/languages/prism/python";
-// those tags are used when you write ```js  {code here} ```
-SyntaxHighlighter.registerLanguage("js", js);
-SyntaxHighlighter.registerLanguage("py", python);
-
-const customRenderers= {
-  // modify the code tag 
-  code(code) {
-  // node since i use ts, this code here might vary in your app
-    const { node } = code;
-    const { lang, value } = node;
-    return (
-      <div style={{ fontSize: "1.6rem" }}>
-        <SyntaxHighlighter
-          style={vscDarkPlus}
-          language={lang}
-          children={value}
-        />
-      </div>
-    );
-  },
-};
 
 const Message = ({ role, content }) => {
   return (
@@ -62,7 +36,7 @@ const Message = ({ role, content }) => {
         }
         
         <div className="text-lg prose">
-          <ReactMarkdown  renderers={customRenderers}>{content}</ReactMarkdown>
+          <ReactMarkdown>{content}</ReactMarkdown>
         </div>
       </div>
     </div>

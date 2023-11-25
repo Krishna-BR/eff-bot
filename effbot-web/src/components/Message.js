@@ -31,6 +31,9 @@ const Message = ({ role, content }) => {
             src={content.split("URL: ")[1].split("\n\nInstruction")[0]}
             alt="Avatar"
             className="border"
+            height={1000}
+            width={1000}
+            unoptimized
           />:
         <div></div>
         }

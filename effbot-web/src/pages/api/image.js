@@ -1,4 +1,4 @@
-import { getChatResponseHeaders, verifyServerSideAuth } from "@/network";
+/*import { getChatResponseHeaders, verifyServerSideAuth } from "@/network";
 import { OpenAIStream , StreamingTextResponse} from "@/utils/openai";
 import { createMiddlewareSupabaseClient } from "@supabase/auth-helpers-nextjs";
 
@@ -77,3 +77,4 @@ async function handler(req) {
 }
 
 export default handler;
+*/

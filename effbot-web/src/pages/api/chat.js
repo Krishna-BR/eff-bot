@@ -1,4 +1,4 @@
-import { getChatResponseHeaders, verifyServerSideAuth } from "@/network";
+import { getChatResponseHeaders } from "@/network";
 import { OpenAIStream } from "@/utils/openai";
 import { createMiddlewareSupabaseClient } from "@supabase/auth-helpers-nextjs";
 
@@ -7,7 +7,7 @@ export const config = {
 };
 
 async function handler(req, res) {
-  const supabase = createMiddlewareSupabaseClient({ req, res });
+  //const supabase = createMiddlewareSupabaseClient({ req, res });
   //const authenticated = await verifyServerSideAuth(supabase, req.headers);
   const headers = getChatResponseHeaders();
 

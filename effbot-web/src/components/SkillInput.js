@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useState } from "react"
 
-const [image, setImage] = useState("");
+
   
 // useState to hold a base64 string
 // useState to hold the chatGPT response
@@ -13,6 +13,7 @@ const [image, setImage] = useState("");
 
 
 function handleFileChange(event){
+  const [image, setImage] = useState("");
     if (event.target.files === null){
       window.alert("No file selected. Choose a file")
       return;

@@ -76,7 +76,7 @@ async function handler(req, res) {
       }
     }
     body.messages[0].content = content_history;
-  };
+  }
 
 
   if (body.stream) {

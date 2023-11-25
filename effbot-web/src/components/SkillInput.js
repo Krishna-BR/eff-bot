@@ -114,6 +114,7 @@ const SkillInput = ({
                 <div className="mb-4 overflow-hidden">
                   <Image src={image}
                     className = "w-full object-conatin max-h-72"
+                      alt="Avatar"
                   />
                   <input
                     type="text"

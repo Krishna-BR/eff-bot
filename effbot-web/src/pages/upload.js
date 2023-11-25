@@ -1,4 +1,4 @@
-"use client"
+/*"use client"
 import { ChangeEvent, useState } from "react"
 
 //Create Initial UI
@@ -122,4 +122,4 @@ export default function Upload() {
       </div>
     </div>
   )
-}
+}*/

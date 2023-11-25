@@ -12,32 +12,6 @@ import { useState } from "react"
 //3. When we request API route we create, we will pass the image string to the backend
 
 
-function handleFileChange(event){
-  const [image, setImage] = useState("");
-    if (event.target.files === null){
-      window.alert("No file selected. Choose a file")
-      return;
-    }
-    const file = event.target.files[0];
-
-    // Convert the users file to a base64 string
-    //FileReader
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-
-    reader.onload = () => {
-      // reader.result -> base 64 string
-      if (typeof reader.result === "string"){
-        console.log(reader.result);
-        setImage(reader.result);
-      }
-    }
-  
-  reader.onerror = (error) => {
-    console.log("error: "+ error);
-  }
-}
-
 
 const SkillInput = ({
   field,
@@ -104,6 +78,33 @@ const SkillInput = ({
         </div>
       );
     case "file":  
+        const [image, setImage] = useState("");
+        function handleFileChange(event){
+          
+            if (event.target.files === null){
+              window.alert("No file selected. Choose a file")
+              return;
+            }
+            const file = event.target.files[0];
+        
+            // Convert the users file to a base64 string
+            //FileReader
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+        
+            reader.onload = () => {
+              // reader.result -> base 64 string
+              if (typeof reader.result === "string"){
+                console.log(reader.result);
+                setImage(reader.result);
+              }
+            }
+          
+          reader.onerror = (error) => {
+            console.log("error: "+ error);
+          }
+        }
+
         return (
           <div className="min-h-screen flex items-center justify-center text-md text-white" >
             <div className="bg-slate-800 w-full max-w-2xl rounded-lg shadow-md p-8">

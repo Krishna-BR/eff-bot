@@ -11,9 +11,9 @@ async function handler(req, res) {
   const authenticated = await verifyServerSideAuth(supabase, req.headers);
   const headers = getChatResponseHeaders();
 
-  if (!authenticated) {
+  /*if (!authenticated) {
     return new Response(`{ "message": "Unauthorized"}`, { status: 401, headers });
-  }
+  }*/
 
   const body = await req.json();
 

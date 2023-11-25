@@ -8,7 +8,7 @@ export const config = {
 
 async function handler(req, res) {
   const supabase = createMiddlewareSupabaseClient({ req, res });
-  const authenticated = await verifyServerSideAuth(supabase, req.headers);
+  //const authenticated = await verifyServerSideAuth(supabase, req.headers);
   const headers = getChatResponseHeaders();
 
   /*if (!authenticated) {

@@ -27,13 +27,10 @@ const Message = ({ role, content }) => {
         </div>
         {
           (content.includes("URL:")) ?
-          <Image
+          <img
             src={content.split("URL: ")[1].split("\n\nInstruction")[0]}
             alt="Avatar"
             className="border"
-            height={100}
-            width={100}
-            unoptimized
           />:
         <div></div>
         }

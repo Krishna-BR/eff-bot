@@ -1,12 +1,13 @@
 import { getChatResponseHeaders } from "@/network";
 import { OpenAIStream } from "@/utils/openai";
-import { createMiddlewareSupabaseClient } from "@supabase/auth-helpers-nextjs";
+//import { createMiddlewareSupabaseClient } from "@supabase/auth-helpers-nextjs";
 
 export const config = {
   runtime: "edge",
 };
 
 async function handler(req, res) {
+  console.log(res);
   //const supabase = createMiddlewareSupabaseClient({ req, res });
   //const authenticated = await verifyServerSideAuth(supabase, req.headers);
   const headers = getChatResponseHeaders();

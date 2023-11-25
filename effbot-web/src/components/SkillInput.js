@@ -111,19 +111,20 @@ const SkillInput = ({
                   <img src={image}
                     className = "w-full object-conatin max-h-72"
                   />
+                  <input
+                    type="text"
+                    name={field}
+                    id={field}
+                    className="hidden text-sm border rounded-lg cursor-pointer"
+                    value={image}
+                    onChange={(e) => onChange(e.target.value)}
+                    //style="display: none;"
+                  />
                 </div> 
+                
                 :
                 <div className="mb-4 p-8 text-center">
                 <p>Once you upload an image, you will see it here.</p>
-                <input
-                  type="text"
-                  name={field}
-                  id={field}
-                  className="text-sm border rounded-lg cursor-pointer"
-                  value={image|""}
-                  onChange={(e) => onChange(e.target.value)}
-                  style="display: none;"
-                />
               </div> 
               }
               
@@ -132,8 +133,8 @@ const SkillInput = ({
                 <label htmlFor={field} className ='mb-2 text-sm font-medium'>{title}</label>
                 <input
                   type={type}
-                  name={field}
-                  id={field}
+                  name="image1"
+                  id="image1"
                   className="text-sm border rounded-lg cursor-pointer"
                   onChange={(e)=> handleFileChange(e)}
                 />
@@ -161,6 +162,7 @@ const SkillInput = ({
               value={value || ""}
               onChange={(e) => onChange(e.target.value)}
             />
+            
           </div>
         </div>
       );

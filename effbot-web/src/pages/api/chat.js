@@ -16,13 +16,68 @@ async function handler(req, res) {
   }
 
   const body = await req.json();
+
   body.model = "gpt-3.5-turbo";
+  for (const message of body.messages) {
+    if (message.content.includes("URL")){
+      body.model = "gpt-4-vision-preview";
+      body.max_tokens =  4096;
+    } 
+  }
 
+  if (body.model === "gpt-3.5-turbo"){
+      body.messages = (body.messages || []).map((m) => ({
+        role: m.role,
+        content: m.content,
+      }));
+  } 
+  else {
+      body.messages = [
+        {
+          role: "user",
+          content: (body.messages || []).map((meg) => {
+            if (meg.content.includes("URL")){
+              const image_url = meg.content.replace("Document URL: ","").split('\n\nInstruction')[0];
+              const instruction = "Instruction"+ meg.content.replace("Document URL: ","").split('\n\nInstruction')[1]
+              if(instruction == "Instructions: "){
+                return {
+                  type: "image_url",
+                  image_url: image_url
+                };
+              } else {
+                return [{
+                  type: "text",
+                  text: instruction
+                },
+                {
+                  type: "image_url",
+                  image_url: image_url
+                }
+              ];
+              }
+            } else {
+              return {
+              type: "text",
+              text: meg.content
+            };
+            }
+        })
+      }
+    ];
+    const content_history =[]
 
-  body.messages = (body.messages || []).map((m) => ({
-    role: m.role,
-    content: m.content,
-  }));
+    for (const message of body.messages[0].content) {
+      if(message.constructor.toString().includes("Array")){
+        for(const item of message){
+          content_history.push(item)
+        }
+      } else{
+        content_history.push(message)
+      }
+    }
+    body.messages[0].content = content_history;
+  };
+
 
   if (body.stream) {
     const stream = await OpenAIStream(body);

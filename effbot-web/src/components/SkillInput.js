@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useState } from "react"
-
+import Image from "next/image";
 
   
 // useState to hold a base64 string
@@ -112,7 +112,7 @@ const SkillInput = ({
               <h2 className="text-xl font-bold mb-4">Uploaded Image</h2>
               {image !== ""?
                 <div className="mb-4 overflow-hidden">
-                  <img src={image}
+                  <Image src={image}
                     className = "w-full object-conatin max-h-72"
                   />
                   <input

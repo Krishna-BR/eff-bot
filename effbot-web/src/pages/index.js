@@ -64,7 +64,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Efficiency Bot - Developer's Choice for Peak Productivity</title>
+        <title>Efficiency Bot - Developer&apos;s Choice for Peak Productivity</title>
         <meta
           name="description"
           content="EffBot is a general purpose, programmable & extensible AI being developed by Krishna, using state of the art machine learning models and APIs."
@@ -80,7 +80,7 @@ export default function Home() {
           <div className="flex-1 overflow-y-auto">
             <div className="mx-auto max-w-4xl overflow-y-auto w-full">
               <h1 className="mx-auto mt-4 my-6 w-full max-w-4xl text-3xl  md:text-4xl font-medium text-center">
-                Efficiency Bot - Developer's Choice for Peak Productivity
+                Efficiency Bot - Developer&apos;s Choice for Peak Productivity
               </h1>
             </div>
 

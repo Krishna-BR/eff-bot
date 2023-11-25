@@ -18,7 +18,7 @@ async function handler(req, res) {
 
   const body = await req.json();
 
-  body.model = "gpt-3.5-turbo";
+  body.model = "gpt-4-1106-preview";
   for (const message of body.messages) {
     if (message.content.includes("URL")){
       body.model = "gpt-4-vision-preview";
@@ -26,7 +26,7 @@ async function handler(req, res) {
     } 
   }
 
-  if (body.model === "gpt-3.5-turbo"){
+  if (body.model === "gpt-4-1106-preview"){
       body.messages = (body.messages || []).map((m) => ({
         role: m.role,
         content: m.content,

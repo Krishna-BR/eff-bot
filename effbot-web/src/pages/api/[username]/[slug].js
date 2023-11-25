@@ -51,7 +51,7 @@ export default async function handler(req, res) {
   }
 
   const body = await req.json();
-  body.model = "gpt-3.5-turbo";
+  body.model = "gpt-4-1106-preview";
 
   const inputData = body.inputData;
 

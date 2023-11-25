@@ -1,7 +1,5 @@
 # Efficiency Bot - Developer's Choice for Peak Productivity\*
 
-NEXT_PUBLIC_SUPABASE_URL=https://gjqzhulzaipvpxkriott.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdqcXpodWx6YWlwdnB4a3Jpb3R0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA2NzgxMTksImV4cCI6MjAxNjI1NDExOX0.0gkPEuTE2unQGYDAqpvcAnno2g3KsOxlI8VPwO-IDgw
 
 ![](effbot-web/public/effbot_mindmap.png)
 

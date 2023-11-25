@@ -1,4 +1,4 @@
-# Efficiency Bot - The AI That Does Everything\*
+# Efficiency Bot - Developer's Choice for Peak Productivity\*
 
 ![](effbot-web/public/effbot_mindmap.png)
 

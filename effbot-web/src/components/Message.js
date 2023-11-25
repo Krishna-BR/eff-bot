@@ -51,7 +51,16 @@ const Message = ({ role, content }) => {
             {role === "user" ? "You " : role === "system" ? "System" : "Eff Bot "}
           </span>
         </div>
-
+        {
+          (content.includes("URL:")) ?
+          <img
+            src={content.split("URL: ")[1].split("\n\nInstruction")[0]}
+            alt="Avatar"
+            className="border"
+          />:
+        <div></div>
+        }
+        
         <div className="text-lg prose">
           <ReactMarkdown  renderers={customRenderers}>{content}</ReactMarkdown>
         </div>

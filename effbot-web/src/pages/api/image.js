@@ -12,9 +12,9 @@ async function handler(req) {
   const headers = getChatResponseHeaders();
 
   
-  /*if (!authenticated) {
+  if (!authenticated) {
     return new Response(`{ "message": "Unauthorized"}`, { status: 401, headers });
-  }*/
+  }
   //console.log(req);
   console.log("Headers",headers);
   //new code - TBR
@@ -73,7 +73,7 @@ async function handler(req) {
     headers["Content-Type"] = "application/json";
     return new Response(resText, { status: 200, headers });
   }
-  */
+  
 }
 
 export default handler;

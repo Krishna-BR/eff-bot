@@ -64,10 +64,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>EffiBot - The AI That Does Everything</title>
+        <title>Efficiency Bot - The AI That Does Everything</title>
         <meta
           name="description"
-          content="EffiBot is a general purpose, programmable & extensible AI being developed by Krishna, using state of the art machine learning models and APIs."
+          content="EffBot is a general purpose, programmable & extensible AI being developed by Krishna, using state of the art machine learning models and APIs."
         />
         <link rel="icon" href="/effbot_icon.png" type="image/png" />
         <meta property="og:image" content="/effbot_meta.png" />
@@ -80,7 +80,7 @@ export default function Home() {
           <div className="flex-1 overflow-y-auto">
             <div className="mx-auto max-w-4xl overflow-y-auto w-full">
               <h1 className="mx-auto mt-4 my-6 w-full max-w-4xl text-3xl  md:text-4xl font-medium text-center">
-                EffiBot - The AI That Does Everything
+                Efficiency Bot - The AI That Does Everything
               </h1>
             </div>
 
